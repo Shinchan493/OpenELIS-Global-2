@@ -225,7 +225,7 @@ function CreatePatientForm(props) {
     const { id, value } = e.target;
     getFromOpenElisServer(
       "/rest/PhoneNumberValidationProvider?fieldId=patientPhone&value=" +
-        encodeURIComponent(value),
+      encodeURIComponent(value),
       (resp) => {
         const validation = { ...phoneValidation };
         validation[id] = resp;
@@ -300,7 +300,7 @@ function CreatePatientForm(props) {
       if (props.selectedPatient.healthRegion != null) {
         getFromOpenElisServer(
           "/rest/health-districts-for-region?regionId=" +
-            props.selectedPatient.healthRegion,
+          props.selectedPatient.healthRegion,
           fetchHealthDistrictsCallback,
         );
       } else {
@@ -1009,11 +1009,13 @@ function CreatePatientForm(props) {
                                 id: "patient.address.healthregion",
                               })}
                               onChange={(e) => handleRegionSelection(e, values)}
-                              helperText={intl.formatMessage({
-                                id: "patient.emergency.additional.region",
-                              })}
                             >
-                              <SelectItem text="" value="" />
+                              <SelectItem
+                                text={intl.formatMessage({
+                                  id: "patient.emergency.additional.region",
+                                })}
+                                value=""
+                              />
                               {healthRegions?.map((region, index) => (
                                 <SelectItem
                                   text={region.value}
@@ -1036,12 +1038,14 @@ function CreatePatientForm(props) {
                               labelText={intl.formatMessage({
                                 id: "patient.address.healthdistrict",
                               })}
-                              onChange={() => {}}
-                              helperText={intl.formatMessage({
-                                id: "patient.emergency.additional.district",
-                              })}
+                              onChange={() => { }}
                             >
-                              <SelectItem text="" value="" />
+                              <SelectItem
+                                text={intl.formatMessage({
+                                  id: "patient.emergency.additional.district",
+                                })}
+                                value=""
+                              />
                               {healthDistricts.map((district, index) => (
                                 <SelectItem
                                   text={district.value}
@@ -1067,12 +1071,14 @@ function CreatePatientForm(props) {
                               labelText={intl.formatMessage({
                                 id: "patient.eduction",
                               })}
-                              onChange={() => {}}
-                              helperText={intl.formatMessage({
-                                id: "patient.emergency.additional.education",
-                              })}
+                              onChange={() => { }}
                             >
-                              <SelectItem text="" value="" />
+                              <SelectItem
+                                text={intl.formatMessage({
+                                  id: "patient.emergency.additional.education",
+                                })}
+                                value=""
+                              />
                               {educationList.map((education, index) => (
                                 <SelectItem
                                   text={education.value}
@@ -1094,12 +1100,14 @@ function CreatePatientForm(props) {
                               labelText={intl.formatMessage({
                                 id: "patient.maritalstatus",
                               })}
-                              onChange={() => {}}
-                              helperText={intl.formatMessage({
-                                id: "patient.emergency.additional.maritalstatus",
-                              })}
+                              onChange={() => { }}
                             >
-                              <SelectItem text="" value="" />
+                              <SelectItem
+                                text={intl.formatMessage({
+                                  id: "patient.emergency.additional.maritalstatus",
+                                })}
+                                value=""
+                              />
                               {maritalStatuses.map((status, index) => (
                                 <SelectItem
                                   text={status.value}
@@ -1125,12 +1133,14 @@ function CreatePatientForm(props) {
                               labelText={intl.formatMessage({
                                 id: "patient.nationality",
                               })}
-                              onChange={() => {}}
-                              helperText={intl.formatMessage({
-                                id: "patient.emergency.additional.nationnality",
-                              })}
+                              onChange={() => { }}
                             >
-                              <SelectItem text="" value="" />
+                              <SelectItem
+                                text={intl.formatMessage({
+                                  id: "patient.emergency.additional.nationnality",
+                                })}
+                                value=""
+                              />
                               {nationalityList.map((nationality, index) => (
                                 <SelectItem
                                   text={nationality.label}
