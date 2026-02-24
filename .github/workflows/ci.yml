@@ -5,9 +5,15 @@ on:
   pull_request:
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   checkFormat-build-unitTest-and-run:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
     steps:
       - name: Set up JDK 21
         uses: actions/setup-java@v1

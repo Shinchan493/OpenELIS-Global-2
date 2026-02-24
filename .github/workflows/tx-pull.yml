@@ -6,11 +6,17 @@ on:
 
 name: "Scheduled Transifex Update"
 
+permissions:
+  contents: read
+
 jobs:
   pull-translations-from-transifex:
     if: ${{ github.repository == 'DIGI-UW/OpenELIS-Global-2' }}
     name: pull-translations-from-transifex
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
 
     steps:
       - name: 🔑 Generate GitHub App token

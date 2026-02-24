@@ -5,6 +5,9 @@ on:
 
 name: "Update Transifex on Push"
 
+permissions:
+  contents: read
+
 jobs:
   push-translations-to-transifex:
     if: ${{ github.repository == 'DIGI-UW/OpenELIS-Global-2' }}

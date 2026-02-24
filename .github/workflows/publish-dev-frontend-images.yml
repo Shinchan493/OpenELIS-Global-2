@@ -15,6 +15,9 @@ env:
   IMAGE_NAME: ${{ github.repository }}
   DOCKER_NAME: ${{ vars.DOCKERHUB_USERNAME }}/openelis-global-2
 
+permissions:
+  contents: read
+
 jobs:
   build-and-push-image-frontend-dev:
     if: ${{ github.repository == 'DIGI-UW/OpenELIS-Global-2' }}
@@ -86,6 +89,9 @@ jobs:
   merge-frontend-dev-platform-images:
     if: ${{ github.repository == 'DIGI-UW/OpenELIS-Global-2' }}
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
     needs:
       - build-and-push-image-frontend-dev
     steps:

@@ -13,6 +13,9 @@ on:
       - '.github/workflows/catalyst-ci.yml'
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   test-catalyst:
     runs-on: ubuntu-latest

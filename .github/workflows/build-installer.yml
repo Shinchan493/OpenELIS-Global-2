@@ -2,10 +2,15 @@ name: Build OpenELIS-Global-2 Installer
 on:
   workflow_call: 
 
+permissions:
+  contents: read
+
     
 jobs:
   build-installer-and-upload-installer:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
 
       - name: Checkout OpenELIS-Global2

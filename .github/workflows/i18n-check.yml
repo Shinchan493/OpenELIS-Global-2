@@ -5,6 +5,9 @@ on:
     paths:
       - "frontend/src/languages/**"
 
+permissions:
+  contents: read
+
 jobs:
   check-duplicate-keys:
     runs-on: ubuntu-latest
